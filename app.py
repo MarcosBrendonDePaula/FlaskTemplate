@@ -1,4 +1,9 @@
+from dotenv import load_dotenv
+load_dotenv()
+
 from flask import Flask, send_from_directory, render_template
+
+
 app = Flask(__name__,template_folder='web/templates')
 
 @app.route('/public/<path:filename>')
