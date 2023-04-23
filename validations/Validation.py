@@ -3,10 +3,26 @@ from datetime import datetime
 class Validation:
     
     def __init__(self, rules, error_msg):
+        """
+        Inicializa uma nova instância da classe Validation com as regras e mensagens de erro fornecidas.
+
+        Args:
+            rules (dict): Um dicionário contendo as regras de validação.
+            error_msg (dict): Um dicionário contendo as mensagens de erro para cada regra de validação.
+        """
         self.rules = rules
         self.error_msg = error_msg
 
     def validate(self, data={}):
+        """
+        Valida os dados fornecidos de acordo com as regras de validação definidas na instância da classe.
+
+        Args:
+            data (dict): Um dicionário contendo os dados a serem validados.
+
+        Returns:
+            dict: Um dicionário contendo o resultado da validação.
+        """
         errors = {}
         failed_rules = {}
         for field, rules in self.rules.items():
